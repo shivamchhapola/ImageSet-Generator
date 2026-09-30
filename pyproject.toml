@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "imageset-generator"
+version = "0.1.0"
+description = "Generate ZIP packs of cropped portrait images from TV shows, movies, or custom lists."
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31",
+    "Pillow>=10.0",
+    "customtkinter>=5.2",
+]
+
+[project.scripts]
+imgset = "imageset_generator.cli:main"
+imgset-gui = "imageset_generator.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["imageset_generator*"]
